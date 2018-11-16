@@ -163,7 +163,7 @@ LUA_FUNCTION_STATIC( loadfile )
 	}
 
 	const char *contents = file->contents.c_str( );
-	if( !lua->RunStringEx( "", path, contents, false, false, false, false ) )
+	if( !lua->RunStringEx( path, "", contents, false, false, false, false ) )
 		return PushError( LUA, -1, "load_fail" );
 
 	if( hasenv )
